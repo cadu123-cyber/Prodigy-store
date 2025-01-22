@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodigy Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f3d; /* Azul Marinho */
+            color: red;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4B0082; /* Roxo forte */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .item {
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .item .product {
+            font-size: 30px; /* "P" menor */
+            font-weight: bold;
+            color: #6a0dad; /* Roxo */
+            position: relative;
+            z-index: 2;
+            background: url('https://www.transparenttextures.com/patterns/roses.png') no-repeat center center;
+            background-size: contain;
+            padding: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .item .product:after {
+            content: "STORE";
+            font-size: 10px; /* Fonte bem pequena para "STORE" */
+            color: #6a0dad;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+
+        .item h3 {
+            color: red;
+            font-size: 1.2em;
+        }
+
+        .item p {
+            color: gray;
+        }
+
+        .item button {
+            background-color: #6a0dad; /* Roxo */
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .item button:hover {
+            background-color: #4b0082; /* Roxo mais escuro */
+        }
+
+        footer {
+            background-color: #4B0082; /* Roxo forte */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .welcome {
+            font-size: 1.5em;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prodigy Store</h1>
+    </header>
+
+    <div class="welcome">
+        <p>Bem-vindo ao Prodigy Store!</p>
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <div class="product">P</div>
+            <h3>Produto 1</h3>
+            <p>R$ 50,00</p>
+            <button onclick="comprar('Produto 1')">Comprar</button>
+        </div>
+
+        <div class="item">
+            <div class="product">P</div>
+            <h3>Produto 2</h3>
+            <p>R$ 75,00</p>
+            <!-- Redireciona para o PayPal -->
+            <button onclick="window.location.href='https://www.paypal.com/signin'">Comprar</button>
+        </div>
+
+        <div class="item">
+            <div class="product">P</div>
+            <h3>Produto 3</h3>
+            <p>R$ 100,00</p>
+            <button onclick="comprar('Produto 3')">Comprar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Prodigy Store</p>
+    </footer>
+
+    <script>
+        function comprar(produto) {
+            alert('Você comprou: ' + produto);
+        }
+    </script>
+</body>
+</html>
